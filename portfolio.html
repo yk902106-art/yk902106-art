@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البورتفوليو الخاص بك - مولد البورتفوليو</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monaco:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="portfolio-container" id="portfolioContainer">
+        <!-- NEW: Redesigned Portfolio Controls (Header) -->
+        <div class="portfolio-controls">
+            <div class="portfolio-logo">
+                <span>My</span>Portfolio
+            </div>
+            <div class="control-group">
+                <!-- REMOVED: Theme/Font Selectors -->
+                <button class="btn btn-secondary" onclick="editPortfolio()">
+                    <i class="fas fa-edit"></i> تعديل
+                </button>
+            </div>
+        </div>
+
+        <!-- NEW: Side Navigation (logic in portfolio.js) -->
+        <nav class="portfolio-nav" id="portfolioNav">
+            <!-- Dots will be injected by JS -->
+        </nav>
+
+        <!-- Portfolio Content -->
+        <div class="portfolio-content">
+            <div class="portfolio-template" id="portfolioTemplate">
+                
+                <!-- Header Section -->
+                <header class="portfolio-header" id="headerSection">
+                    <div class="header-content">
+                        <div class="profile-section">
+                            <div class="profile-image-container">
+                                <img id="profileImage" src="" alt="Profile" class="profile-image">
+                                <div class="logo-container" id="logoContainer" style="display: none;">
+                                    <img id="logoImage" src="" alt="Logo" class="logo-image">
+                                </div>
+                            </div>
+                            <div class="profile-info">
+                                <h1 id="fullName" class="profile-name"></h1>
+                                <h2 id="jobTitle" class="profile-title"></h2>
+                                <p id="location" class="profile-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span id="country"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-quick">
+                            <a id="emailLink" href="" class="contact-item" style="display: none;">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a id="phoneLink" href="" class="contact-item" style="display: none;">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a id="linkedinLink" href="" target="_blank" class="contact-item" style="display: none;">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a id="githubLink" href="" target="_blank" class="contact-item" style="display: none;">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- About Section -->
+                <section class="portfolio-section" id="aboutSection">
+                    <h3 class="section-title">
+                        <i class="fas fa-user"></i>
+                        من أنا؟
+                    </h3>
+                    <div class="section-content">
+                        <p id="aboutMe" class="about-text"></p>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section class="portfolio-section" id="skillsSection">
+                    <h3 class="section-title">
+                        <i class="fas fa-cogs"></i>
+                        مهاراتي
+                    </h3>
+                    <div class="section-content">
+                        <div id="skillsList" class="skills-grid">
+                            <!-- Skills -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section class="portfolio-section" id="projectsSection">
+                    <h3 class="section-title">
+                        <i class="fas fa-project-diagram"></i>
+                        أبرز المشاريع
+                    </h3>
+                    <div class="section-content">
+                        <div id="projectsList" class="projects-grid">
+                            <!-- Projects -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section class="portfolio-section" id="experienceSection">
+                    <h3 class="section-title">
+                        <i class="fas fa-briefcase"></i>
+                        الخبرة العملية
+                    </h3>
+                    <div class="section-content">
+                        <div id="experienceList" class="experience-timeline">
+                            <!-- Experience -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="portfolio-section" id="educationSection">
+                    <h3 class="section-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        التعليم
+                    </h3>
+                    <div class="section-content">
+                        <div id="educationContent" class="education-content">
+                            <!-- Education -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Achievements Section -->
+                <section class="portfolio-section" id="achievementsSection">
+                    <h3 class="section-title">
+                        <i class="fas fa-trophy"></i>
+                        الشهادات والإنجازات
+                    </h3>
+                    <div class="section-content">
+                        <div id="achievementsContent" class="achievements-content">
+                            <!-- Achievements -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section class="portfolio-section" id="contactSection">
+                    <h3 class="section-title">
+                        <i class="fas fa-envelope"></i>
+                        تواصل معي
+                    </h3>
+                    <div class="section-content">
+                        <div id="contactInfo" class="contact-grid">
+                            <!-- Contact info -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="portfolio-footer">
+                    <p>&copy; <span id="currentYear"></span> <span id="footerName"></span>. كل الحقوق محفوظة.</p>
+                    <p class="generated-by">تم إنشاؤه بواسطة مولد البورتفوليو العصري</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="portfolio.js"></script>
+</body>
+</html>

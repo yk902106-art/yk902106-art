@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اصنع هويتك الرقمية - مولد البورتفوليو</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- NEW: Canvas background -->
+    <canvas id="hero-canvas"></canvas>
+
+    <div class="welcome-container">
+        <div class="welcome-content">
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1 class="hero-title">اصنع هويتك الرقمية</h1>
+                    <p class="hero-subtitle">حوّل مهاراتك وخبراتك إلى تحفة فنية تجذب العملاء. ابدأ الآن في دقائق معدودة مع أداتنا العصرية.</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-rocket"></i>
+                            <span>إعداد فوري</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-palette"></i>
+                            <span>تصميم مبهر</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>متجاوب كلياً</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-cta" onclick="showRegistration()">
+                        <span>ابدأ الآن مجاناً</span>
+                        <i class="fas fa-arrow-left"></i> <!-- Changed to left for RTL -->
+                    </button>
+                </div>
+                <!-- REMOVED: Static portfolio preview -->
+                <div class="hero-image-placeholder">
+                    <!-- This column is intentionally left blank.
+                         The animated canvas provides the visual interest. -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration Modal -->
+        <div id="registrationModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>إنشاء حساب جديد</h2>
+                    <span class="close" onclick="hideRegistration()">&times;</span>
+                </div>
+                <form id="registrationForm" class="registration-form">
+                    
+                    <!-- MODIFIED: Form Group for Floating Label -->
+                    <div class="form-group">
+                        <input type="text" id="fullName" name="fullName" required placeholder=" ">
+                        <label for="fullName">الاسم بالكامل</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">البريد الإلكتروني</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" required placeholder=" ">
+                        <label for="password">كلمة المرور</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder=" ">
+                        <label for="confirmPassword">تأكيد كلمة المرور</label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">إنشاء حساب</button>
+
+                    <div class="form-toggle">
+                        لديك حساب بالفعل؟ <a href="#">سجل الدخول</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

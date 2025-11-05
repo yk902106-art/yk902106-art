@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختر مجالك - مولد البورتفوليو</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="categories-container">
+        <div class="categories-content">
+            <div class="categories-header">
+                <h1>اختر مجالك الاحترافي</h1>
+                <p>اختر الفئة الأنسب لخبرتك لنخصص البورتفوليو ليعكس هويتك.</p>
+                <!-- Search bar will be injected here by JS -->
+            </div>
+
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Categories will be populated by JavaScript -->
+            </div>
+
+            <div class="categories-footer">
+                <a href="form.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-right"></i> العودة للفورم
+                </a>
+                <button id="generateBtn" class="btn btn-cta" onclick="generatePortfolio()">
+                    <span>أنشئ البورتفوليو</span>
+                    <i class="fas fa-magic"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="categories.js"></script>
+</body>
+</html>

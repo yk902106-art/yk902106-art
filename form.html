@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إكمال البورتفوليو - مولد البورتفوليو</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-content">
+            <div class="form-header">
+                <h1>أكمل ملفك الشخصي</h1>
+                <p>اتبع الخطوات التالية لإنشاء بورتفوليو احترافي ومبهر.</p>
+            </div>
+
+            <form id="portfolioForm" class="portfolio-form">
+
+                <!-- NEW: Progress Bar -->
+                <div class="form-progress">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-dot">1</div>
+                        <span>الشخصية</span>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-dot">2</div>
+                        <span>الخبرات</span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-dot">3</div>
+                        <span>التواصل</span>
+                    </div>
+                </div>
+
+                <!-- NEW: Step 1 -->
+                <div class="form-step active">
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-user"></i>
+                            المعلومات الشخصية
+                        </h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="fullName" name="fullName" required placeholder=" ">
+                                <label for="fullName">الاسم بالكامل *</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="jobTitle" name="jobTitle" placeholder=" " required>
+                                <label for="jobTitle">المسمى الوظيفي * (مثال: مطور ويب)</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="country" name="country" placeholder=" " required>
+                                <label for="country">الدولة / المدينة *</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="logo">شعارك (اختياري)</label>
+                                <div class="file-upload">
+                                    <input type="file" id="logo" name="logo" accept="image/*">
+                                    <label for="logo" class="file-upload-label">
+                                        <i class="fas fa-upload"></i>
+                                        <span>ارفع شعارك</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row single">
+                            <div class="form-group">
+                                <label for="profileImage">صورتك الشخصية *</label>
+                                <div class="file-upload">
+                                    <input type="file" id="profileImage" name="profileImage" accept="image/*" required>
+                                    <label for="profileImage" class="file-upload-label">
+                                        <i class="fas fa-camera"></i>
+                                        <span>ارفع صورتك</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row single">
+                            <div class="form-group">
+                                <textarea id="aboutMe" name="aboutMe" placeholder=" " required></textarea>
+                                <label for="aboutMe">نبذة عني * (اكتب وصفاً مختصراً...)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Step 2 -->
+                <div class="form-step">
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-cogs"></i>
+                            المهارات والخبرات
+                        </h2>
+                        <div class="form-group">
+                            <label>مهاراتك *</label>
+                            <div class="add-skill-input">
+                                <input type="text" id="skillInput" placeholder="أدخل مهارة (مثل: JavaScript) واضغط Add">
+                                <button type="button" class="add-skill-btn" onclick="addSkill()">
+                                    <i class="fas fa-plus"></i> Add
+                                </button>
+                            </div>
+                            <div id="skillsContainer" class="skills-container"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-project-diagram"></i>
+                            المشاريع
+                        </h2>
+                        <div id="projectsContainer"></div>
+                        <button type="button" class="add-section-btn" onclick="addProject()">
+                            <i class="fas fa-plus"></i> أضف مشروع
+                        </button>
+                    </div>
+
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-briefcase"></i>
+                            الخبرة العملية
+                        </h2>
+                        <div id="experienceContainer"></div>
+                        <button type="button" class="add-section-btn" onclick="addExperience()">
+                            <i class="fas fa-plus"></i> أضف خبرة
+                        </button>
+                    </div>
+                </div>
+
+                <!-- NEW: Step 3 -->
+                <div class="form-step">
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            التعليم والشهادات
+                        </h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="university" name="university" placeholder=" ">
+                                <label for="university">الجامعة / الكلية</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="major" name="major" placeholder=" ">
+                                <label for="major">التخصص / الدرجة العلمية</label>
+                            </div>
+                        </div>
+                         <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="studyYears" name="studyYears" placeholder=" ">
+                                <label for="studyYears">سنوات الدراسة (مثال: 2018-2022)</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="onlineCourses" name="onlineCourses" placeholder=" "></textarea>
+                                <label for="onlineCourses">كورسات أونلاين (Coursera, etc.)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h2 class="section-title">
+                            <i class="fas fa-envelope"></i>
+                            معلومات التواصل
+                        </h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" id="contactEmail" name="contactEmail" required placeholder=" ">
+                                <label for="contactEmail">البريد الإلكتروني *</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder=" ">
+                                <label for="phoneNumber">رقم الهاتف (اختياري)</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="url" id="linkedin" name="linkedin" placeholder=" ">
+                                <label for="linkedin">رابط LinkedIn</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="url" id="github" name="github" placeholder=" ">
+                                <label for="github">رابط GitHub</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Step Actions -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="prevBtn" onclick="nextPrev(-1)">
+                        <i class="fas fa-arrow-right"></i> السابق
+                    </button>
+                    <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)">
+                        التالي <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="form.js"></script>
+</body>
+</html>
